@@ -107,6 +107,7 @@ module.exports = function(grunt) {
 			compile: {
 				options: {
 					processName: function(fileName) {
+<<<<<<< HEAD
 						var arr = fileName.split(".")
 							,path = arr[arr.length - 2].split("/")
 							,name = path[path.length - 1];
@@ -115,6 +116,22 @@ module.exports = function(grunt) {
 				}
 				,files: {
 					"build/templates.js": "app/templates/*.hbs"
+=======
+						var arr = fileName.split("."),
+							path = arr[arr.length - 2].split("/"),
+							name = path[path.length - 1],
+							isComponents = path.indexOf('components') > -1;
+						if(isComponents) {
+							return 'components/' + name;
+						}
+						else {
+							return name;
+						}
+					}
+				},
+				files: {
+					"debug/templates.js": ["app/templates/*.hbs","app/templates/components/*.hbs"]
+>>>>>>> 200548305e932acca55c914cc929f5c8ea54fb8c
 				}
 			}
 		}
@@ -230,6 +247,7 @@ module.exports = function(grunt) {
     }
 		,watch: {
 			scripts: {
+<<<<<<< HEAD
 				files: [
           'app/library/*.js'
           ,'app/*.js'
@@ -245,6 +263,11 @@ module.exports = function(grunt) {
           ,'concat'
         ]
 				,options: {
+=======
+				files: ['app/library/*.js', 'app/*.js', 'app/controllers/*.js', 'app/views/*.js', 'app/routes/*.js', 'app/css/*.scss', 'app/templates/**/*.hbs', 'app/tests/*.js'],
+				tasks: ['ember_handlebars','concat', 'sass'],
+				options: {
+>>>>>>> 200548305e932acca55c914cc929f5c8ea54fb8c
 					debounceDelay: 100
 				}
 			}
