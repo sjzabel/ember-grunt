@@ -102,5 +102,6 @@ The **/release** directory will contain your production-ready code
 
 ## Release History
 
+ * 2013-12-20   v0.3.0   Forked Sam, made many changes
  * 2013-06-06   v0.2.0   Updated to Ember 1.0, Handlebars 1.0   
  * 2013-03-10   v0.1.0   Initial build tools
